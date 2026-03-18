@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/panditk/HelloWorld.git'
+                git branch: 'master', url: 'https://github.com/panditk/HelloWorld.git',
+                credentialsId: '5535a237-22cc-4497-9101-75338c620d3b'
             }
         }
 
