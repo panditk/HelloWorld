@@ -23,12 +23,14 @@ pipeline {
 
         stage('Test') {
             steps {
+                dir('Test2')
                 sh 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
+                dir('Test2')
                 sh 'mvn package'
             }
         }
