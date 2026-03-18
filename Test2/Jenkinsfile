@@ -16,22 +16,25 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir('Test2')
-                sh 'mvn clean install'
+                dir('Test2') {
+                    sh 'mvn clean install'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                dir('Test2')
-                sh 'mvn test'
+                dir('Test2'){
+                    sh 'mvn test'
+                }
             }
         }
 
         stage('Package') {
             steps {
-                dir('Test2')
+                dir('Test2'){
                 sh 'mvn package'
+                }
             }
         }
     }
